@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Harlow Malloc">
+<meta name="author" content="Michael Kumi">
 <meta name="dcterms.date" content="2023-09-13">
 
-<title>Michael Kumi - Post With Code</title>
+<title>Michael Kumi - Bayesian Computational Methods For Latent Space Models In Networks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -61,6 +80,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -107,11 +128,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Post With Code</h1>
+      <h1 class="title">Bayesian Computational Methods For Latent Space Models In Networks</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">news</div>
-                <div class="quarto-category">code</div>
-                <div class="quarto-category">analysis</div>
+                <div class="quarto-category">Project</div>
               </div>
                   </div>
   </div>
@@ -122,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Harlow Malloc </p>
+               <p>Michael Kumi </p>
             </div>
     </div>
       
@@ -147,11 +167,49 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is a post with executable code.</p>
+<p>Networks are collections of interconnected things or collections of elements and their inter-relations. A network consists of the links between members of a set of actors or nodes connected by a specific kind of relationship. Networks have now been useful in studying complex systems across a diverse range of application areas. In biology, it has been useful for the study of protein-protein interactions (<span class="citation" data-cites="pellegrini2004protein">Pellegrini, Haynor, and Johnson (<a href="#ref-pellegrini2004protein" role="doc-biblioref">2004</a>)</span>). In engineering, it can be applied in electrical engineering and electronics to understand the components of electrical circuits (<span class="citation" data-cites="kumar2008electric">Kumar (<a href="#ref-kumar2008electric" role="doc-biblioref">2008</a>)</span>) and in transportation for modeling and analyzing transport networks (<span class="citation" data-cites="tarapata2015modelling">Tarapata (<a href="#ref-tarapata2015modelling" role="doc-biblioref">2015</a>)</span>). In finance, it can be used as a tool to study the relationships between market participants and their impacts on the financial market (<span class="citation" data-cites="liang2015social">Liang and Guo (<a href="#ref-liang2015social" role="doc-biblioref">2015</a>)</span>). It can be applied in Neuroscience to explore the patterns of voltage dynamics in the brain associated with epileptic seizures (<span class="citation" data-cites="kramer2012epilepsy">Kramer and Cash (<a href="#ref-kramer2012epilepsy" role="doc-biblioref">2012</a>)</span>) and also in the field of education to understand the patterns related to the citation of articles or journals (<span class="citation" data-cites="newman2004coauthorship">Newman (<a href="#ref-newman2004coauthorship" role="doc-biblioref">2004</a>)</span>), legal cases (<span class="citation" data-cites="olsen2017finding">Olsen and Küçüksu (<a href="#ref-olsen2017finding" role="doc-biblioref">2017</a>)</span>), and many others.</p>
+<p>A network structure is made up of nodes (vertices) and edges (links). Nodes represent the objects or subjects being studied, while edges represent the relationships between those objects. For example, if we investigate a social relationship between Facebook users, nodes represent users and edges represent relationships such as user friendships or group memberships. From <span class="citation" data-cites="kolaczyk2014statistical">Kolaczyk and Csárdi (<a href="#ref-kolaczyk2014statistical" role="doc-biblioref">2014</a>)</span>, the mathematical structure of a network graph is defined as <span class="math inline">\(G = (V, E)\)</span> which is composed of a set <span class="math inline">\(V\)</span> of vertices and a set <span class="math inline">\(E\)</span> of edges, with elements of <span class="math inline">\(E\)</span> being unordered pairs <span class="math inline">\({u, v}\)</span> of distinct vertices <span class="math inline">\(u, v \in V\)</span>. The order of the graph <span class="math inline">\(G\)</span> is sometimes referred to as the number of vertices <span class="math inline">\(N_v = |V|\)</span> and the size as the number of edges <span class="math inline">\(N_e = |E|\)</span>.</p>
+<p>Understanding the structure of a network and how it came to be is very essential to network analysis. That is, we can imagine the network as the result of some underlying processes associated with the complex system of interest to us, and then ask what the most important aspects of these processes are. So we may want to know more about the actual manner in which the network was obtained, i.e., the corresponding measurement and construction process of the network. Such concerns provide an impetus for network modeling and related statistical inference tools. Some examples of statistical network models include the exponential random graph models, which are analogous to generalized linear models, stochastic block models, which are a type of mixture model, and the latent space model which can be used for a variety of purposes, for example, clustering of network data into groups with more similar characteristics (<span class="citation" data-cites="zhou2019latent">Zhou et al. (<a href="#ref-zhou2019latent" role="doc-biblioref">2019</a>)</span>).</p>
+<p>For the study, we examined latent space model, the type of statistical network model with the common practice of using both observed and unobserved (i.e., latent) variables in modeling an outcome in the presence or absence of network edges (<span class="citation" data-cites="hoff2002latent">Hoff, Raftery, and Handcock (<a href="#ref-hoff2002latent" role="doc-biblioref">2002</a>)</span>). The problem with estimating the parameters of the latent space model is that it can be computationally expensive when dealing with large network data. We have a computational cost of order <span class="math inline">\(O\left(N^2\right)\)</span> where <span class="math inline">\(N\)</span> is the number of nodes or actors in the network which means that the time required to perform a particular computation increases quadratically with the size of the nodes of the network, so when we have a large network data, working with the latent space model becomes infeasible. The aim was to discuss some of the existing methods for estimating the parameters of the latent space model and then use the Laplace approximation technique to estimate the parameters of this model. We then compared the Laplace approximation to the latentnet package and assessed how well they estimate the latent distances and the computational cost involved using a simulation study and then applied this new approach to a real-data to see how it performs.</p>
+<section id="references" class="level1">
 
 
 
-</main> <!-- /main -->
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-hoff2002latent" class="csl-entry" role="listitem">
+Hoff, Peter D, Adrian E Raftery, and Mark S Handcock. 2002. <span>“Latent Space Approaches to Social Network Analysis.”</span> <em>Journal of the American Statistical Association</em> 97 (460): 1090–98.
+</div>
+<div id="ref-kolaczyk2014statistical" class="csl-entry" role="listitem">
+Kolaczyk, Eric D, and Gábor Csárdi. 2014. <em>Statistical Analysis of Network Data with r</em>. Vol. 65. Springer.
+</div>
+<div id="ref-kramer2012epilepsy" class="csl-entry" role="listitem">
+Kramer, Mark A, and Sydney S Cash. 2012. <span>“Epilepsy as a Disorder of Cortical Network Organization.”</span> <em>The Neuroscientist</em> 18 (4): 360–72.
+</div>
+<div id="ref-kumar2008electric" class="csl-entry" role="listitem">
+Kumar, K Suresh. 2008. <em>Electric Circuits and Networks</em>. Pearson Education India.
+</div>
+<div id="ref-liang2015social" class="csl-entry" role="listitem">
+Liang, Pinghan, and Shiqi Guo. 2015. <span>“Social Interaction, Internet Access and Stock Market Participation—an Empirical Study in China.”</span> <em>Journal of Comparative Economics</em> 43 (4): 883–901.
+</div>
+<div id="ref-newman2004coauthorship" class="csl-entry" role="listitem">
+Newman, Mark EJ. 2004. <span>“Coauthorship Networks and Patterns of Scientific Collaboration.”</span> <em>Proceedings of the National Academy of Sciences</em> 101 (suppl_1): 5200–5205.
+</div>
+<div id="ref-olsen2017finding" class="csl-entry" role="listitem">
+Olsen, Henrik Palmer, and Aysel Küçüksu. 2017. <span>“Finding Hidden Patterns in ECtHR’s Case Law: On How Citation Network Analysis Can Improve Our Knowledge of ECtHR’s Article 14 Practice.”</span> <em>International Journal of Discrimination and the Law</em> 17 (1): 4–22.
+</div>
+<div id="ref-pellegrini2004protein" class="csl-entry" role="listitem">
+Pellegrini, Matteo, David Haynor, and Jason M Johnson. 2004. <span>“Protein Interaction Networks.”</span> <em>Expert Review of Proteomics</em> 1 (2): 239–49.
+</div>
+<div id="ref-tarapata2015modelling" class="csl-entry" role="listitem">
+Tarapata, Zbigniew. 2015. <span>“Modelling and Analysis of Transportation Networks Using Complex Networks: Poland Case Study.”</span> <em>Archives of Transport</em> 36 (4): 55–65.
+</div>
+<div id="ref-zhou2019latent" class="csl-entry" role="listitem">
+Zhou, Lei, Bai Xiao, Xianglong Liu, Jun Zhou, Edwin R Hancock, et al. 2019. <span>“Latent Distribution Preserving Deep Subspace Clustering.”</span> In <em>28th International Joint Conference on Artificial Intelligence</em>, 4440–46. York.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
