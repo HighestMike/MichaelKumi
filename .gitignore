@@ -1,3 +1,6 @@
+/.quarto/
+/_site/
+
 # History files
 .Rhistory
 .Rapp.history
@@ -40,7 +43,7 @@ vignettes/*.pdf
 .Renviron
 
 # pkgdown site
-docs/
+## docs/
 
 # translation temp files
 po/*~
