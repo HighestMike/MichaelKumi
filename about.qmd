@@ -13,6 +13,9 @@ about:
     - icon: github
       text: Github
       href: https://github.com/HighestMike
+    - icon: gmail
+      text: Gmail
+      href: https://mr.michaelkumi@gmail.com
 
 ---
 
