@@ -2,8 +2,17 @@
   {
     "listing": "/index.html",
     "items": [
+      "/MichaelKumi/posts/post-with-code/index.html",
       "/posts/post-with-code/index.html",
+      "/MichaelKumi/posts/welcome/index.html",
       "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/MichaelKumi/index.html",
+    "items": [
+      "/MichaelKumi/posts/post-with-code/index.html",
+      "/MichaelKumi/posts/welcome/index.html"
     ]
   }
 ]
