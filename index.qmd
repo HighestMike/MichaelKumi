@@ -1,5 +1,5 @@
 ---
-title: "Exploring Knowledge and Ambitions: My Academic and Career Odyssey."
+title: "Exploring Knowlege and Ambitions: My Academic and Career Odyssey."
 listing:
   contents: posts
   sort: "date desc"
