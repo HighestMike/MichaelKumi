@@ -9,12 +9,14 @@ website:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/HighestMike
+      - icon: linkedin
+        href: https://www.linkedin.com/in/michael-kumi-043022211?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BPwFSW6B8Su%2BEqMJGlhtzTw%3D%3D
 format:
   html:
-    theme: cosmo
+    theme:
+       light: flatly
+       dark: darkly
     css: styles.css
 
 

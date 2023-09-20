@@ -1,5 +1,5 @@
 ---
-title: "Welcome To My Blog"
+title: "My Interest"
 author: "Michael Kumi"
 date: "2023-09-10"
 categories: [news]

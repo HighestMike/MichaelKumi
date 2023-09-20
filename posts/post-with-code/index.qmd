@@ -2,7 +2,7 @@
 title: "Bayesian Computational Methods For Latent Space Models In Networks"
 author: "Michael Kumi"
 date: "2023-09-13"
-categories: [news, Project]
+categories: [Project]
 image: "latent1.png"
 bibliography: inform-priors.bib
 ---
